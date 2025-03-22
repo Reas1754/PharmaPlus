@@ -14,12 +14,16 @@ body {
 }
 
 /* 🌟 Styling Logo */
+
 .logo {
-    width: 120px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    object-fit: cover; /* Memastikan gambar tidak terdistorsi */
 }
+
+
+
 
 /* 📝 Input Pencarian */
 input {
@@ -153,11 +157,6 @@ button:hover {
     background: rgba(255, 255, 255, 0.5);
 }
 
-.logo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover; /* Memastikan gambar tidak terdistorsi */
-}
+
 
 
