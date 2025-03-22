@@ -13,8 +13,10 @@
         <h1>🔎 Pencarian Fungsi Obat</h1>
         <!-- Kotak Pencarian + Tombol Cari -->
         <div class="search-container">
-            <input type="text" id="search" placeholder="Masukkan nama obat..." autofocus>
-            <button id="search-btn">Cari</button>
+            <input type="text" id="namaObat" placeholder="Masukkan nama obat...">
+            <button onclick="cariObat()">Cari</button>
+            <p id="hasilPencarian"></p>
+
         </div>
 
         <!-- Hasil Pencarian -->
