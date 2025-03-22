@@ -1,0 +1,154 @@
+/* ✨ Warna & Font Modern */
+body {
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* Gradasi biru */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* 📌 Container Utama */
+.container {
+    margin-top: 50px;
+}
+
+/* 🌟 Styling Logo */
+.logo {
+    width: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* 📝 Input Pencarian */
+input {
+    padding: 12px;
+    width: 80%;
+    max-width: 400px;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
+    text-align: center;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* 🔍 Efek Hover pada Input */
+input:focus {
+    background-color: #ffffff;
+    color: #0072ff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* 🔽 Hasil Pencarian */
+#results {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* 🎯 Efek Animasi untuk Hasil */
+.result-item {
+    background: rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+/* 🎭 Efek Hover */
+.result-item:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* 🚫 Obat Tidak Ditemukan */
+.not-found {
+    font-style: italic;
+    color: #ffcccc;
+}
+/* ✨ Styling Tombol Cari */
+button {
+    padding: 12px 20px;
+    font-size: 18px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 25px;
+    color: #333;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 10px;
+}
+
+/* 🎭 Efek Hover */
+button:hover {
+    background-color: #ffaa00;
+}
+/* ✨ Styling Tombol & Input */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* 📝 Input Pencarian */
+input {
+    padding: 12px;
+    width: 300px;
+    font-size: 18px;
+    border: 2px solid #0072ff;
+    border-radius: 25px;
+    text-align: center;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* 🔍 Efek Hover pada Input */
+input:focus {
+    border-color: #ffcc00;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+}
+
+/* ✨ Styling Tombol "Cari" */
+button {
+    padding: 12px 20px;
+    font-size: 18px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 25px;
+    color: #333;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* 🎭 Efek Hover */
+button:hover {
+    background-color: #ffaa00;
+}
+
+/* 🔽 Hasil Pencarian */
+#results {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* 🚫 Obat Tidak Ditemukan */
+.not-found {
+    font-style: italic;
+    color: #ffcccc;
+}
+
+/* 🎯 Efek Animasi untuk Hasil */
+.result-item {
+    background: rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    transition: 0.3s;
+}
+.result-item:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
