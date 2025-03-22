@@ -152,3 +152,12 @@ button:hover {
 .result-item:hover {
     background: rgba(255, 255, 255, 0.5);
 }
+
+.logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+}
+
+
