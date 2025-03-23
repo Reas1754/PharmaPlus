@@ -1,10 +1,10 @@
 function cariObat() {
-    let namaObat = document.getElementById("namaObat").value.toLowerCase();
-    let hasil = document.getElementById("hasilPencarian");
+    let input = document.getElementById("search").value.trim().toLowerCase();
+    let hasil = databaseObat.find(obat => obat.nama.toLowerCase() === input);
 
-    if (databaseObat[namaObat]) {
-        hasil.innerHTML = `<strong>${namaObat}:</strong> ${databaseObat[namaObat]}`;
+    if (hasil) {
+        document.getElementById("result").innerText = hasil.fungsi;
     } else {
-        hasil.innerHTML = "Obat tidak ditemukan. Coba lagi!";
+        document.getElementById("result").innerText = "Obat tidak ditemukan. Coba lagi!";
     }
 }
