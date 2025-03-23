@@ -1,19 +1,40 @@
-document.getElementById("search-btn").addEventListener("click", cariObat);
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("Script berjalan...");
 
-function cariObat() {
-    let query = document.getElementById("namaObat").value.trim().toLowerCase();
-    let hasil = document.getElementById("hasilPencarian");
+    document.getElementById("search-btn").addEventListener("click", searchObat);
+    document.getElementById("search").addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            searchObat();
+        }
+    });
+});
+
+function searchObat() {
+    let query = document.getElementById("search").value.trim().toLowerCase();
+    console.log("Pencarian:", query);
+
+    let resultDiv = document.getElementById("results");
 
     if (query === "") {
-        hasil.innerHTML = "Masukkan nama obat terlebih dahulu.";
+        resultDiv.innerHTML = "<p class='not-found'>Masukkan nama obat terlebih dahulu.</p>";
         return;
     }
 
-    let obatDitemukan = databaseObat.find(obat => obat.nama.toLowerCase() === query);
+    if (typeof databaseObat === "undefined") {
+        console.error("databaseObat tidak terdeteksi!");
+        resultDiv.innerHTML = "<p class='not-found'>Data obat tidak ditemukan.</p>";
+        return;
+    }
 
-    if (obatDitemukan) {
-        hasil.innerHTML = `<b>${obatDitemukan.nama}:</b> ${obatDitemukan.fungsi}`;
+    let hasil = databaseObat.filter(obat => obat.nama.toLowerCase().includes(query));
+    console.log("Hasil pencarian:", hasil);
+
+    resultDiv.innerHTML = "";
+    if (hasil.length === 0) {
+        resultDiv.innerHTML = "<p class='not-found'>Obat tidak ditemukan.</p>";
     } else {
-        hasil.innerHTML = "Obat tidak ditemukan. Coba lagi!";
+        hasil.forEach(obat => {
+            resultDiv.innerHTML += `<p class="result-item"><b>${obat.nama}</b>: ${obat.fungsi}</p>`;
+        });
     }
 }
