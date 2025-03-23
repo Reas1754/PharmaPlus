@@ -1,40 +1,13 @@
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("Script berjalan...");
+function cariObat() {
+    let input = document.getElementById("namaObat").value.trim().toLowerCase();
+    let hasilPencarian = document.getElementById("hasilPencarian");
 
-    document.getElementById("search-btn").addEventListener("click", searchObat);
-    document.getElementById("search").addEventListener("keypress", function (event) {
-        if (event.key === "Enter") {
-            searchObat();
-        }
-    });
-});
+    let obatDitemukan = databaseObat.find(obat => obat.nama.toLowerCase() === input);
 
-function searchObat() {
-    let query = document.getElementById("search").value.trim().toLowerCase();
-    console.log("Pencarian:", query);
-
-    let resultDiv = document.getElementById("results");
-
-    if (query === "") {
-        resultDiv.innerHTML = "<p class='not-found'>Masukkan nama obat terlebih dahulu.</p>";
-        return;
-    }
-
-    if (typeof databaseObat === "undefined") {
-        console.error("databaseObat tidak terdeteksi!");
-        resultDiv.innerHTML = "<p class='not-found'>Data obat tidak ditemukan.</p>";
-        return;
-    }
-
-    let hasil = databaseObat.filter(obat => obat.nama.toLowerCase().includes(query));
-    console.log("Hasil pencarian:", hasil);
-
-    resultDiv.innerHTML = "";
-    if (hasil.length === 0) {
-        resultDiv.innerHTML = "<p class='not-found'>Obat tidak ditemukan.</p>";
+    if (obatDitemukan) {
+        hasilPencarian.innerHTML = `<b>${obatDitemukan.nama}:</b> ${obatDitemukan.fungsi}`;
     } else {
-        hasil.forEach(obat => {
-            resultDiv.innerHTML += `<p class="result-item"><b>${obat.nama}</b>: ${obat.fungsi}</p>`;
-        });
+        hasilPencarian.innerHTML = "Obat tidak ditemukan. Coba lagi!";
     }
 }
+
